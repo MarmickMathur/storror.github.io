@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vendorhome</title>
+    <link rel="stylesheet" href="/dist/css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+
+<body class="scroll-smooth uppercase">
+    <div class="w-screen absolute top-0 left-0 h-screen z-[200] loader hidden  items-center justify-center">
+        <div class="h-screen w-screen absolute backdrop:blur-3xl"></div>
+        <div class="inline-block absolute h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status">
+            <span
+                class="!absolute !-m-px !h-px bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+        </div>
+    </div>
+
+    <div class="h-screen overflow-auto relative">
+        <div id="header" class="sticky top-0 h-[9%]">
+            <div
+                class="w-full z-10 overflow-visible bg-gray-800 h-[98%] text-white flex flex-col mobile:flex-row justify-between">
+                <div
+                    class="transition-all mobile:ml-8 text-center mobile:mt-2 mobile:p-2 h-fit w-screen mobile:w-fit font-headingside1 uppercase font-light shadow-md shadow-slate-700  text-gray-900 rounded-sm cursor-default bg-gray-500 text-5xl hover:shadow-lg hover:shadow-slate-700">
+                    vendor</div>
+                <div class="flex justify-between mobile:justify-center items-center m-0 mobile:mr-4">
+                    <span
+                        class="bg-slate-800 w-1/2 text-left  text-white  rounded-sm mobile:bg-gray-500 uppercase font-headingside2 text-base h-fit mobile:w-fit mobile:text-black p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 inline-block mr-2 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+
+                        <span id="userid"></span>
+
+                    </span>
+                    <div id="logout"
+                        class="bg-slate-800 w-1/2 text-white text-right  rounded-sm mobile:bg-gray-500 uppercase font-headingside2 text-base h-fit mobile:w-fit hover:shadow-md hover:shadow-black hover:border-2 mobile:text-black cursor-pointer p-2">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 inline-block h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                        </svg>
+
+                        <p class="inline-block">logout</p>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[2%] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        </div>
+
+        <div id="main" class=" md:grid flex flex-col md:grid-cols-10 min-h-[91%] scrollbar-hide">
+            <div class="w-full h-7 mobile:hidden block"></div>
+
+            <div id="maincontent"
+                class="bg-gray-600 col-span-10 grid grid-cols-1 mobile:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-8">
+            </div>
+        </div>
+    </div>
+</body>
+
+<modal id="modal"
+    class=" hidden absolute top-0 h-screen w-screen z-20 scrollbar-hide justify-center items-center backdrop-blur-lg ">
+
+    <div id="submodal" class="h-screen overflow-auto w-full mobile:w-[90%] md:w-1/2 scrollbar-hide relative z-30">
+    </div>
+
+
+</modal>
+<script src="/dist/bundles/bundledatabase.js"></script>
+
+</html>

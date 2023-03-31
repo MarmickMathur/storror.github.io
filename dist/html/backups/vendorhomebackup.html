@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    
+    <div class="grid grid-cols-4 gap-4">
+        <div class="rounded overflow-hidden shadow-lg ">
+            
+        </div>
+        <div class="">
+            <form id="addstore" class="bg-white flex flex-col p-6 rounded-md shadow-lg">
+                <label for="storename"> storename: </label>
+                <input type="text" id="storename" name="storename" required>
+                <label for="adress"> adress: </label>
+                <input type="text" id="adress" name="adress" required>
+                <div>
+                    <label for="status"> status: </label>
+                    <label for="open">open</label>
+                    <input type="radio" name="status" id="open" value=true>
+                    <label for="closed">closed</label>
+                    <input type="radio" name="status" id="closed" value=false>
+                </div>
+                <button type="submit">submit</button>
+            </form>
+        </div>
+        <table id="storetable">
+        </table>
+    </div>
+    <div>
+        <form action="" id="getmenu">
+            <h3>add menus to the store that is submited</h3>
+            <input type="text" name="getiteam" class="" required>
+            <label for="availability">availability:</label>
+            <label for="available">available</label>
+            <input type="radio" name="availability" id="available" value="true">
+            <label for="unavailable"> unavailable</label>
+            <input type="radio" name="availability" id="unavailable" value="false">
+            <button type="submit" class="bg-gray-600">add</button>
+        </form>
+    </div>
+    <div>
+        <button id="gotohomepage" class="invisible">home</button>
+    </div>
+</body>
+<script src="../bundles/bundledatabase.js"></script>
+
+</html>

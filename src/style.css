@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:wght@300;500&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rubik+Mono+One&family=Tilt+Prism&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+    @apply transition-all bg-gray-300 rounded w-full h-80 overflow-hidden shadow-md shadow-slate-900 hover:shadow-lg hover:scale-105 hover:shadow-slate-900 flex flex-col
+}
+
+.modalcard {
+    @apply h-fit rounded-md overflow-hidden my-32 cursor-default w-full;
+}

@@ -1,0 +1,25 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.mask1 {
+    mask: url('bg1.png');
+    mask-size: cover;
+    -webkit-mask: url('bg1.png');
+    -webkit-mask-size: cover;
+}
+
+.mask3 {
+    mask: url('store mid.png');
+    mask-size: cover;
+    -webkit-mask: url('store mid.png');
+    -webkit-mask-size: cover;
+}
+
+.mask2 {
+    mask: url('bg.png');
+    mask-size: cover;
+    -webkit-mask: url('bg.png');
+    -webkit-mask-size: cover;
+}

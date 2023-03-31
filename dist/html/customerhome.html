@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customerhome</title>
+    <link rel="stylesheet" href="/dist/css/style.css">
+</head>
+
+<body class="scroll-smooth uppercase">
+    <div class="w-screen absolute top-0 left-0 h-screen z-[200] loader hidden  items-center justify-center">
+        <div class="h-screen w-screen absolute backdrop:blur-3xl"></div>
+        <div class="inline-block absolute h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status">
+            <span
+                class="!absolute !-m-px !h-px bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+        </div>
+    </div>
+
+    <div class="h-screen relative">
+        <div class=" h-[9%] w-52 block md:hidden"></div>
+
+        <div id="header" class="w-screen fixed md:sticky z-50 top-0 h-[9%]">
+            <div
+                class="w-full z-10 overflow-visible bg-gray-800 h-[98%] text-white flex flex-col mobile:flex-row justify-between">
+                <div
+                    class="transition-all text-center mobile:tracking-normal tracking-widest w-full mobile:w-fit ease-out delay-100 m-0 p-0 mt-2 mobile:ml-8 mobile:mt-2 mobile:p-2 h-fit font-headingside1 uppercase font-light shadow-md shadow-slate-700 text-gray-900 rounded-sm cursor-default bg-gray-500 text-5xl hover:shadow-lg hover:shadow-slate-700">
+                    customer</div>
+
+                <div class="flex mobile:justify-center justify-between  w-full md:w-fit items-center md: m-0 md:mr-4">
+
+                    <div class="mobile:bg-gray-500 bg-gray-700 rounded-none md:rounded-sm uppercase font-headingside2 text-sm md:text-base h-fit w-1/2 mobile:w-fit
+                        text-black cursor-pointer mobile:p-2  mobile:mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6  inline-block m-0 mobile:mr-2 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span id="customerid"></span>
+                    </div>
+                    <div id="logout"
+                        class="mobile:bg-gray-500 bg-gray-700 rounded-sm uppercase font-headingside2 text-sm mobile:block flex justify-end mobile:text-base h-fit w-1/2 mobile:w-fit hover:shadow-md hover:shadow-black hover:border-2 text-black cursor-pointer mobile:p-2">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 inline-block h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                        </svg>
+
+                        <span class="inline-block">logout</span>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[2%] bg-gradient-to-r md:block hidden from-blue-500 via-purple-500 to-pink-500"></div>
+        </div>
+
+        <div id="main" class="rela md:grid md:grid-cols-10 md:h-[91%] h-fit scrollbar-hide">
+
+            <div id="leftnav" class=" h-full flex flex-col md:block  bg-gray-400  md:col-span-2  pt-7 md:pt-5">
+                <div class="text-xl uppercase sortmenu shadow-md md:shadow-none shadow-black p-2 font-headingside2">
+                    sort by:
+                </div>
+                <div
+                    class=" transition-[height] md:flex sortoptions md:bg-transparent p-2 w-full top-32 mx-auto md:p-0  md:static absolute left-1/2 md:translate-x-0 -translate-x-1/2 bg-gray-700 overflow-hidden  md:rounded-none rounded-md justify-center md:h-fit hidden">
+                    <div class="mb-3 xl:w-96">
+                        <div class="h-10 mb-2 flex">
+                            <div for="" class="w-1/2 h-full ">
+                                <input type="radio" class="hidden peer" name="filter" id="openfilter">
+                                <label for="openfilter"
+                                    class="filter1 peer-checked:bg-gray-600 w-full h-full block text-center rounded-l-md bg-gray-200 text-black peer-checked:text-white">
+                                    <span class="hidden mobile:inline-block">open </span>
+
+
+                                </label>
+                            </div>
+                            <div for="" class="w-1/2 h-full ">
+                                <input type="radio" class="hidden peer" name="filter" id="closedfilter">
+                                <label for="closedfilter"
+                                    class="filter1 peer-checked:bg-gray-600 h-full w-full block text-center rounded-r-md bg-gray-200 text-black peer-checked:text-white">
+                                    allstore</label>
+                            </div>
+                        </div>
+                        <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+                            <input type="search"
+                                class="searchbars relative m-0 -mr-px block w-[1%] min-w-0 flex-auto rounded-l border border-solid text-black focus:text-white border-neutral-300 focus:bg-gray-600 bg-clip-padding px-3 py-1.5 text-base font-normal outline-none transition duration-300 ease-in-out focus:border-primary focus:shadow-te-primary focus:outline-none  dark:placeholder:text-neutral-200"
+                                placeholder="storename" aria-label="Search" aria-describedby="button-addon1" />
+                            <button
+                                class="searchbuttons relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-black focus:text-white shadow-md transition duration-150 ease-in-out  hover:bg-primary-700 hover:shadow-lg hover:bg-gray-200 focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+                                type="button" id="button-addon1" data-te-ripple-init data-te-ripple-color="light">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="h-5 w-5">
+                                    <path fill-rule="evenodd"
+                                        d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="relative mb-4 flex w-full flex-wrap items-stretch">
+                            <input type="search"
+                                class="searchbars relative m-0 -mr-px block w-[1%] min-w-0 flex-auto rounded-l border border-solid text-black focus:text-white border-neutral-300 focus:bg-gray-600 bg-clip-padding px-3 py-1.5 text-base font-normal outline-none transition duration-300 ease-in-out focus:border-primary focus:shadow-te-primary focus:outline-none  dark:placeholder:text-neutral-200"
+                                placeholder="vendorname" aria-label="Search" aria-describedby="button-addon1" />
+                            <button
+                                class="searchbuttons relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-black focus:text-white shadow-md transition duration-150 ease-in-out  hover:bg-primary-700 hover:shadow-lg hover:bg-gray-200 focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+                                type="button" id="button-addon1" data-te-ripple-init data-te-ripple-color="light">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="h-5 w-5">
+                                    <path fill-rule="evenodd"
+                                        d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="maincontent"
+                class="bg-gray-600 h-full scrollbar-hide overflow-auto w-full md:col-span-8 grid grid-cols-1 mobile:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 p-8">
+            </div>
+        </div>
+    </div>
+</body>
+
+<modal id="modal"
+    class=" hidden fixed top-0 h-screen w-screen z-20 scrollbar-hide justify-center items-center backdrop-blur-lg ">
+
+    <div id="submodal" class="h-screen overflow-auto mobile:w-[90%] md:w-1/2 w-full scrollbar-hide relative z-30">
+
+
+    </div>
+
+</modal>
+<script src="/dist/bundles/bundlecustomer.js"></script>
+
+</html>
